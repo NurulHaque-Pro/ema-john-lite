@@ -1,7 +1,7 @@
-import React from 'react';
 
 const Product = (props) => {
     const { img, name, price, seller, ratings } = props.product;
+    const addToCart = props.addToCart;
     return (
         <div className='border rounded relative h-[520px]'>
             <img className='w-80 h-80 rounded p-2' src={img} alt="" />
@@ -11,7 +11,7 @@ const Product = (props) => {
                 <p>Manufacturer: {seller} </p>
                 <p>Ratings: {ratings} &#9733;</p>
             </div>
-            <button className='bg-[#FFE0B2] w-full p-3 rounded-b absolute bottom-0 hover:bg-[#FF9900]'>Add To Cart</button>
+            <button onClick={()=> addToCart(props.product)} className='bg-[#FFE0B2] w-full p-3 rounded-b absolute bottom-0 hover:bg-[#FF9900]'>Add To Cart</button>
         </div>
 
     );
